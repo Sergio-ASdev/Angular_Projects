@@ -1,0 +1,25 @@
+<h1>Ejemplo directivas Angular</h1>
+<h3>Numero de deportes: {{ sports.length }}</h3>
+<!-- Realizamos un IF con directiva -->
+<div *ngIf="sports.length <= 3; then deportesMenor7; else deportesMayor7">
+    <p>Tienes menos de 7 deportes...</p>
+</div>
+
+<h4 style="color: red"> El primer deporte es {{ sports[0] }} </h4>
+
+<!-- Un bucle se realzia sobre la etiqueta HTML que deseemos repetir n veces (se suele utilizar bucle each)-->
+<ul>
+    <li *ngFor="let deporte of sports; let i = index">
+        Posición {{i}}, {{deporte}}
+    </li>
+</ul>
+
+<ng-template #deportesMenor7>
+    <h2 style="color:blue">Tenemos menos o = a 7 deportes</h2>
+</ng-template>
+
+<ng-template #deportesMayor7>
+    <h2 style="color:blue">No tenemos mas o igual a 7 deportes </h2>
+</ng-template>
+
+<hr>

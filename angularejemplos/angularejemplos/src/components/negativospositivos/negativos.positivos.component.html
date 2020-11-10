@@ -1,0 +1,13 @@
+<h1>Negativos postitivos usando directiva style</h1>
+<button (click)="generarNumeros()">Generar numeros</button>
+
+<ul>
+    <li *ngFor="let num of numeros"
+     [ngClass]="{
+        verde: num > 0,
+        rojo: num < 0,
+        azul: num == 0
+     }">{{num}}</li>
+</ul>
+
+<hr>
