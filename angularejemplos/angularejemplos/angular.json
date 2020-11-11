@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularejemplos"
+    }
+  },
+  "defaultProject": "angularejemplos",
+  "cli": {
+    "analytics": "10480d1b-35a6-4212-8d40-41609f679fc9"
+  }
 }

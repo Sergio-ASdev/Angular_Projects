@@ -1,0 +1,19 @@
+<h1>Formularios por REFERENCIA</h1>
+
+<p>Es lo más parecido a React.  Se utiliza cuando no tenemos modelos, solo variables.
+Aunque, por supuesto, podemos utilizarlo con Modelos también.
+Debemos referenciar las cajas manualmente por su   #name
+</p>
+
+<form #sumarForm="ngForm">
+
+    <label for="cajanumero1">Número 1: </label>
+    <input type="number" name="cajanumero1" #cajanumero1 /><br/>
+
+    <label for="cajanumero2">Número 2: </label>
+    <input type="number" name="cajanumero2" #cajanumero2 /><br>
+
+    <button (click)="sumarDosNumeros()">Sumar números</button>
+</form>
+
+<h1 style="color: violet">La suma es: {{ suma }}</h1>
