@@ -1,0 +1,28 @@
+<h1>1</h1>
+<h2>a tabla de multiplicar</h2>
+
+<form #calculadoraForm="ngForm" (ngSubmit)="pintarTabla()">
+    
+    <label for="numero">Numero: </label>
+    <input type="number" #numero="ngModel" [(ngModel)]="numero"/>
+
+    <button [disabled]="!calculadoraForm.valid">Pintar tabla</button>
+</form>
+<!--
+ 
+<table>
+    <thead>
+        <th>operacion</th>
+        <th>resultado</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let n of numeros;">
+            
+            <td>{numero} * {n}</td>
+            <td>{numero*n}</td>
+            
+        </tr>
+    </tbody>
+    
+</table>
+-->
