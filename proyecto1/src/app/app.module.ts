@@ -10,6 +10,8 @@ import { HomeComponent } from './components/b-rutas/home/home.component';
 
 // Importar enrutadores
 import {routing, appRoutingProviders } from './app.routing';
+import { NumerodobleComponent } from './components/numerodoble/numerodoble.component';
+import { CNumerodobleComponent } from './components/c-numerodoble/c-numerodoble.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {routing, appRoutingProviders } from './app.routing';
     ATablaMultiplicarComponent,
     AnimalComponent,
     CineComponent,
-    HomeComponent
+    HomeComponent,
+    NumerodobleComponent,
+    CNumerodobleComponent
   ],
   imports: [
     BrowserModule,

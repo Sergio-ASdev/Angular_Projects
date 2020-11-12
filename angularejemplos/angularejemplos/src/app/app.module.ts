@@ -12,11 +12,12 @@ import { FormuariopersonaComponent } from './components/formuariopersona/formuar
 // para poder trabajar con formularios necesitamos importar esto 13, 20
 import {FormsModule} from '@angular/forms';
 import { SumarnumerosComponent } from './components/sumarnumeros/sumarnumeros.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, PrimerComponente, CiclosVida, Deportes, NumerosRandom, NegativosPositivos, FormuariopersonaComponent, SumarnumerosComponent
+    AppComponent, PrimerComponente, CiclosVida, Deportes, NumerosRandom, NegativosPositivos, FormuariopersonaComponent, SumarnumerosComponent, MenuComponent
   ],
   imports: [
     BrowserModule, FormsModule

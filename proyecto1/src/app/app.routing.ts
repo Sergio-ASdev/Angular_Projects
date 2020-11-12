@@ -6,6 +6,8 @@ import { HomeComponent } from './components/b-rutas/home/home.component';
 import { AnimalComponent } from './components/b-rutas/animal/animal.component';
 import { CineComponent } from './components/b-rutas/cine/cine.component';
 
+import { CNumerodobleComponent } from './components/c-numerodoble/c-numerodoble.component';
+
 // Nos creamos un array de rutas
 // las rutas llevan implicita la barra /, por lo que no hay que ponerlas si son directamente desde la raiz
 // { path:"", component: Jome}
@@ -16,6 +18,9 @@ const appRoutes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "animal", component: AnimalComponent },
     { path: "cine", component: CineComponent },
+    { path: "numerodoble", component: CNumerodobleComponent },
+    // para controlar el error 404, debemos indicarlo SIEMPRE como ultima ruta
+    //{ path: "**", component: Error404Component },
 ];
 
 // para poder utilizar esta clase con sus imports imports integrados dentro de modules, debemos indicar que es un proveedor de rutas
@@ -23,4 +28,4 @@ const appRoutes: Routes = [
 // esto son nombres de variables para llamarlas desde module.ts
 export const appRoutingProviders: any[] = [];
 // es el nombre que utilizaremos en el imports de module.ts
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);
