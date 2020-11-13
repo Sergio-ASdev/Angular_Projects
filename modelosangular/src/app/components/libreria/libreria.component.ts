@@ -17,6 +17,11 @@ export class LibreriaComponent implements OnInit {
     this.favorito = this.comics[id];
     console.log(this.favorito);
   }
+
+  eliminarComic(event){
+    var index = parseInt(event);
+    this.comics.splice(index, 1);
+  }
   
   constructor() {
         this.comics = [

@@ -3,4 +3,5 @@
     <h4> {{ comic.titulo}} </h4>
     <img src="{{ comic.imagen }}" alt="{{ comic.titulo }}" style="width:100px; height: 150px;"/><br/>
     <button (click)="marcarFavorito()">Añadir comic a favorito</button>
+    <button (click)="deleteComic()" style="background-color: red; color:white">Borrar</button>
 </div>
