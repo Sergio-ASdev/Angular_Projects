@@ -1,0 +1,17 @@
+<h1>Librería</h1>
+<!--
+<app-comic [comic]="comics[0]"></app-comic>
+<app-comic [comic]="comics[1]"></app-comic>
+<app-comic [comic]="comics[2]"></app-comic>
+-->
+<div style="float: left; clear: left;" *ngIf="favorito != null" style="background-color: blue;">
+    <h1 style="color: red">{{favorito.titulo}}</h1>
+    <img src="{{ favorito.imagen }}" style="width">
+</div>
+<div *ngFor="let comic of comics; let i = index">
+    <app-comic 
+        [comic]="comic" 
+        [indice]="i"
+        (seleccionarFavorito)="seleccionarFavorito($event)"
+    ></app-comic>
+</div>

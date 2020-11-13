@@ -12,6 +12,7 @@ import { HomeComponent } from './components/b-rutas/home/home.component';
 import {routing, appRoutingProviders } from './app.routing';
 import { NumerodobleComponent } from './components/numerodoble/numerodoble.component';
 import { CNumerodobleComponent } from './components/c-numerodoble/c-numerodoble.component';
+import { CocheComponent } from './coche/coche.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CNumerodobleComponent } from './components/c-numerodoble/c-numerodoble.
     CineComponent,
     HomeComponent,
     NumerodobleComponent,
-    CNumerodobleComponent
+    CNumerodobleComponent,
+    CocheComponent
   ],
   imports: [
     BrowserModule,

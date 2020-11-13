@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "modelosangular"
+    }
+  },
+  "defaultProject": "modelosangular",
+  "cli": {
+    "analytics": false
+  }
 }
