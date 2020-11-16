@@ -4,11 +4,14 @@ import { Comic } from '../../models/comic';
 @Component({
   selector: 'app-libreria',
   templateUrl: './libreria.component.html',
-  styleUrls: ['./libreria.component.css']
+  styleUrls: ['./libreria.component.css', '../../app.component.css']
 })
 export class LibreriaComponent implements OnInit {
+  public comic : any;
   public comics: Array<Comic>;
   public favorito: Comic;
+  public editar: boolean;
+  public id: number;
 
   seleccionarFavorito(event){
     // Aqui vamos a recibir el ID
@@ -22,7 +25,33 @@ export class LibreriaComponent implements OnInit {
     var index = parseInt(event);
     this.comics.splice(index, 1);
   }
+
+  recibirDatos(){
+    // console.log(this.comic);
+    var id = parseInt(this.comic.id);
+    this.comic = {
+      nombre: this.comic.nombre,
+      imagen: this.comic.imagen,
+      titulo: this.comic.titulo,
+    }
+    // this.comics[id] = this.comic;
+    if(this.comic.nombre != this.comics[id].nombre &&
+       this.comic.imagen != this.comics[id].imagen &&
+       this.comic.titulo != this.comics[id].titulo
+    ){
+      // this.comics.splice(id-1, 1, this.comic);
+      console.log("if");
+      this.comics[id] = this.comic;
+    } 
+
+    if(!this.comic[id]){
+      this.comics.splice(id, 0, this.comic);
+    }
+    
+    console.log(this.comics);
+  }
   
+  // no cargaba bien el componente html por no tener inicializado a vacio el objeto
   constructor() {
         this.comics = [
             new Comic(
@@ -41,6 +70,13 @@ export class LibreriaComponent implements OnInit {
               "Yo soy Groot"
             )
           ];
+
+      this.comic = {
+        id: "",
+        nombre: "",
+        imagen: "",
+        titulo: ""
+      }
   }
 
   ngOnInit(): void {

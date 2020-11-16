@@ -6,15 +6,11 @@
 -->
 <div style="float: left; clear: left;" *ngIf="favorito != null" style="background-color: blue;">
     <h1 style="color: red">{{favorito.titulo}}</h1>
-    <img src="{{ favorito.imagen }}" style="width">
+    <img src="{{ favorito.imagen }}">
 </div>
 
-<div>
-    <h2>Editar/añadir comic</h2>
-    <form>
-        <label for=""></label>
-    </form>
-</div>
+
+
 
 
 <div *ngFor="let comic of comics; let i = index">
@@ -24,4 +20,23 @@
         (seleccionarFavorito)="seleccionarFavorito($event)"
         (eliminarComic)="eliminarComic($event)"
     ></app-comic>
+</div>
+
+<div>
+    <h2>Editar/añadir comic</h2>
+    <form #comicForm="ngForm" (ngSubmit)="recibirDatos()">
+        <label for="id">ID: </label>
+        <input type="number" name="id" #id="ngModel" [(ngModel)]="comic.id" required /><br/>
+        
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="comic.nombre" required /><br/>
+
+        <label for="imagen">Imagen URL: </label>
+        <input type="text" name="imagen" #image="ngModel" [(ngModel)]="comic.image" required /><br/>
+
+        <label for="titulo">Título: </label>
+        <input type="text" name="titulo" #titulo="ngModel" [(ngModel)]="comic.titulo" required /><br/>
+    
+        <button [disabled]="!comicForm.valid">Editar/Crear</button>
+    </form>
 </div>

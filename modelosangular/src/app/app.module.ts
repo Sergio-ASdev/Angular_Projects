@@ -14,6 +14,7 @@ import { PadrecontadoresComponent } from './components/padrecontadores/padrecont
 import { ComicComponent } from './components/comic/comic.component';
 import { LibreriaComponent } from './components/libreria/libreria.component';
 
+
 @NgModule({
   declarations: [
     AppComponent, MenucollatzComponent, CollatzComponent, ListaproductosComponent, CocheComponent, ConcesionarioComponent, HijocontadorComponent, PadrecontadoresComponent, ComicComponent, LibreriaComponent

@@ -4,7 +4,7 @@ import { Comic } from 'src/app/models/comic';
 @Component({
   selector: 'app-comic',
   templateUrl: './comic.component.html',
-  styleUrls: ['./comic.component.css']
+  styleUrls: ['./comic.component.css', '../../app.component.css']
 })
 
 export class ComicComponent implements OnInit {
@@ -12,6 +12,8 @@ export class ComicComponent implements OnInit {
   @Input() indice: number;
   @Output() seleccionarFavorito = new EventEmitter();
   @Output() eliminarComic = new EventEmitter();
+  @Output() editarComicPadre = new EventEmitter();
+
 
   marcarFavorito(){
     console.log("Selecionado");
