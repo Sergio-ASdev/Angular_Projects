@@ -19,9 +19,11 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
             <ng-container *ngFor="let v of generos;">
-              <a class="dropdown-item" href="#">{{ v.nombreGenero }}</a>
+              <a class="dropdown-item" [roterLink]="['/pelicula/genero/', v.idGenero]">{{ v.nombreGenero }}</a>
+              
             </ng-container>
             <!--
+              <a>/pelicula/genero/{{ v.idGenero }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
             -->
