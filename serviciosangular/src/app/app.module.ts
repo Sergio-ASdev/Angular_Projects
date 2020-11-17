@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
 import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
 
+import { routing, appRoutingProvider } from './app.routing';
+import { TablempleadosComponent } from './components/tablempleados/tablempleados.component';
+import { DetallesempleadoComponent } from './components/detallesempleado/detallesempleado.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +21,14 @@ import { EmpleadosoficioComponent } from './components/empleadosoficio/empleados
     PersonasComponent,
     CochesComponent,
     EmpleadossalarioComponent,
-    EmpleadosoficioComponent
+    EmpleadosoficioComponent,
+    TablempleadosComponent,
+    DetallesempleadoComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule
+    BrowserModule, HttpClientModule, FormsModule, routing
   ],
-  providers: [],
+  providers: [appRoutingProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

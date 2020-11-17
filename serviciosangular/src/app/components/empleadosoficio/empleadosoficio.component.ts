@@ -21,26 +21,29 @@ export class EmpleadosoficioComponent implements OnInit {
   }
 
   buscarEmpleados(){
-    this._service.buscarOficios().subscribe(response => {
+    this._service.getOficios().subscribe(response => {
       this.oficios = response;
-      console.log(this.oficios);
+    }, error => {
+      console.log(error);
     });
   }
 
 
   buscarEmpleados2(event){
     // lo inicializo a vacio siempre que se ejecute porque no quiero que se me almacenen los valores
-    this.oficios = [];
+    this.empleadosDeLosOficios = [];
 
     var oficio = this.cajaoficio.nativeElement.value;
-    console.dir(event.target.options);
+    // console.dir(event.target.options);
     var options = event.target.options
     for (let i = 0; i < options.length; i++) {
       if(options[i].selected){
-        console.log(options[i].value);
+        // console.log(options[i].value);
         var oficio = options[i].value;
         this._service.buscarEmpleadosOficio(oficio).subscribe(response => {
           this.empleadosDeLosOficios.push(response);
+        }, error => {
+          console.log(error);
         });
       }
     }
@@ -52,13 +55,18 @@ export class EmpleadosoficioComponent implements OnInit {
     */
   }
 
+  pintarOficios(){
+    this._service.getOficios().subscribe(response => {
+      this.oficios = response;
+    }, error => {
+      console.log(error);
+    });
+  }
+
   
 
   ngOnInit(): void {
-    this._service.buscarOficios().subscribe(response => {
-      this.oficios = response;
-      console.log(this.oficios);
-    });
+    this.pintarOficios();
   }
 
 }

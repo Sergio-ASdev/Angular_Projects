@@ -1,0 +1,38 @@
+<div *ngIf="peliculas.length > 0" id="tablaPeliculas">
+    <h1>peliculas</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Carátula</th>
+            <th scope="col">Fecha de estreno</th>
+            <th scope="col">actores</th>
+            <th scope="col">Director</th>
+            <th scope="col">Duracion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Trailer</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of peliculas;let i = index" id="fila{{ i+1 }}">
+                <th scope="row">{{ v.idPelicula }}</th>
+                <!--
+                <td>{{ v.IdDistribuidor }}</td>
+                <td>{{ v.IdGenero }}</td>
+                <td>{{ v.Argumento }}</td>
+                <td>{{ v.idNacionalidad }}</td>
+                -->
+                <td>{{ v.titulo }}</td>
+                <td><img src="{{ v.foto }}"  style="width: 200px; width: 100px;"/></td>
+                <td>{{ v.fechaEstreno }}</td>
+                <td>{{ v.actores }}</td>
+                <td>{{ v.director }}</td>
+                <td>{{ v.duracion }}min</td>
+                <td>{{ v.precio }}€</td>
+                <td><a href="{{ v.enlaceVideo }}">youtube</a></td>
+                <td></td>
+              </tr>
+        </tbody>
+    </table>
+</div>
