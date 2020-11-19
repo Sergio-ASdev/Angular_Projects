@@ -1,0 +1,66 @@
+<div class="container my-5">
+  <div class="form-group my-5">
+    <form *ngIf="funciones.length > 0" class="my-3 py-3">
+      <label>Filtra por Funcion con evento</label>
+      <select name="funciones1" id="selectFunciones1" class="form-control" (change)="filtrarEmpleados1($event)"
+        #cajasselect1 name="cajasselect1">
+        <option value="0">-- Ninguno --</option>
+        <option *ngFor="let v of funciones;" value="{{v}}">{{ v }}</option>
+      </select>
+    </form>
+
+    <form *ngIf="funciones.length > 0">
+      <label>Filtra por Funcion con ngForm, ngModel viewchild y elementref</label>
+      <select name="funciones2" id="selectFunciones2" class="form-control" #cajasselect2 name="cajasselect2">
+        <option value="0">-- Ninguno --</option>
+        <option *ngFor="let v of funciones;" value="{{v}}">{{ v }}</option>
+      </select>
+    </form>
+
+    <form *ngIf="funciones.length > 0">
+      <label>Filtra por Funcion con seleccion multiple por evento</label>
+      <select name="funciones2" id="selectFunciones2" class="form-control" #cajasselect2 name="cajasselect2">
+        <option value="0">-- Ninguno --</option>
+        <option *ngFor="let v of funciones;" value="{{v}}">{{ v }}</option>
+      </select>
+    </form>
+
+    <form *ngIf="funciones.length > 0">
+        <label>Filtra multiple por Funcion con ngForm, ngModel viewchild y elementref</label>
+        <select name="funciones2" id="selectFunciones2" class="form-control" #cajasselect2 name="cajasselect2">
+          <option value="0">-- Ninguno --</option>
+          <option *ngFor="let v of funciones;" value="{{v}}">{{ v }}</option>
+        </select>
+      </form>
+
+  </div>
+
+  <div *ngIf="plantilla.length > 0">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID Empleado</th>
+          <th scope="col">Hospital</th>
+          <th scope="col">Sala</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Funcion</th>
+          <th scope="col">Salario</th>
+          <th scope="col">Turno</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of plantilla; let i = index">
+          <th scope="row">{{ i }}</th>
+          <td>{{ v.idEmpleado }}</td>
+          <td>{{ v.idHospital }}</td>
+          <td>{{ v.idSala }}</td>
+          <td>{{ v.apellido }}</td>
+          <td>{{ v.funcion }}</td>
+          <td>{{ v.salario }}</td>
+          <td>{{ v.turno }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
